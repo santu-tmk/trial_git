@@ -1,14 +1,20 @@
-class ZTLS_TEST definition
-  public
-  final
-  create public .
+CLASS ztls_test DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+    INTERFACES: if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZTLS_TEST IMPLEMENTATION.
+CLASS ztls_test IMPLEMENTATION.
+  METHOD if_oo_adt_classrun~main.
+    out->write( |Hello, { sy-uname }!| ).
+    out->write(  |Hello, { cl_abap_context_info=>get_user_technical_name(  ) } | ).
+  ENDMETHOD.
+
 ENDCLASS.
